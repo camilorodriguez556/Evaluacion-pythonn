@@ -40,18 +40,18 @@ while True:
     opc = input("Seleccione una opción: ")
     if opc == "1":
         saldo = usuarios[cedula_ingresada]["saldo"]
-        print(f" Su saldo actual es: ${saldo}")
+        print(f" Su saldo actual es: {saldo}")
     elif opc == "2":
         valor = int(input("Ingrese el valor a consignar: "))
         usuarios[cedula_ingresada]["saldo"] += valor   
         usuarios[cedula_ingresada]["movimientos"].append(f"Consigno {valor}")
-        print(f"✔ Consignación exitosa. Nuevo saldo: ${usuarios[cedula_ingresada]['saldo']}")
+        print(f" Consignación exitosa. Nuevo saldo: {usuarios[cedula_ingresada]['saldo']}")
     elif opc == "3":
         valor = int(input("Ingrese el valor a retirar: "))
         if valor <= usuarios[cedula_ingresada]["saldo"]:
             usuarios[cedula_ingresada]["saldo"] -= valor
             usuarios[cedula_ingresada]["movimientos"].append(f"Retiro {valor}")
-            print(f"✔ Retiro exitoso. Nuevo saldo: ${usuarios[cedula_ingresada]['saldo']}")
+            print(f" Retiro exitoso. Nuevo saldo: {usuarios[cedula_ingresada]['saldo']}")
         else:
             print(" Fondos insuficientes.")
     elif opc == "4":
